@@ -4,6 +4,11 @@ const webpack = require("webpack");
 
 module.exports = defineConfig({
   transpileDependencies: true,
+  //以下為使用GitHub Pages
+  publicPath:
+    process.env.NODE_ENV === "production"
+      ? "/vue3-project/" // 替换 'your-repository-name' 为你的 GitHub 仓库名
+      : "/",
   //以下為添加的特性標誌
   configureWebpack: {
     plugins: [
